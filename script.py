@@ -11,7 +11,8 @@ session = InstaPy(username=USERNAME, password=PASSWORD)
 
 
 with smart_run(session):
-    # session.follow_user_followers(["frontendjoe"], amount=3, randomize=False)
-    session.follow_user_following(["frontendjoe"], amount=3, randomize=False)
+    session.set_do_follow(enabled=True, percentage=100)
+    session.set_do_like(enabled=True, percentage=100)
+    session.follow_likers(["frontendjoe"], photos_grab_amount=1, follow_likers_per_photo=2, randomize=False, sleep_delay=600, interact=True)
 
     session.join_pods()
