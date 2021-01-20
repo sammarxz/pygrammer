@@ -11,16 +11,6 @@ session = InstaPy(username=USERNAME, password=PASSWORD)
 
 
 with smart_run(session):
-    session.set_do_follow(enabled=True, percentage=100)
-    session.set_do_like(enabled=True, percentage=100)
-
-    session.like_by_tags(["designinspiration", "Programming", "UIDesign", 
-        "dribbblers", "Programmer", "webprogramming", "development",
-        "webdevelopment", "computer", "tech"
-    ], 5)
-
-    comments = ["Nice", "Love your posts"]
-    session.set_do_comment(enabled=True, percentage=95)
-    session.set_comments(comments=comments, media="Photo")
+    session.follow_user_followers(["frontendjoe", amount=3, randomize=False])
 
     session.join_pods()
